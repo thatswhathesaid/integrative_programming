@@ -20,11 +20,11 @@
     "description" : "Operations available to regular developers"
   } ],
   "paths" : {
-    "/inventory" : {
-      "get" : {
-        "tags" : [ "developers" ],
+    "/status" : {
+      "post" : {
+        "tags" : [ "users" ],
         "summary" : "searches inventory",
-        "operationId" : "searchInventory",
+        "operationId" : "postStatus",
         "description" : "By passing in the appropriate options, you can search for\navailable inventory in the system\n",
         "produces" : [ "application/json" ],
         "parameters" : [ {
@@ -63,25 +63,40 @@
             "description" : "bad input parameter"
           }
         }
-      },
+      }
+    },
+    "/friend" : {
       "post" : {
-        "tags" : [ "admins" ],
-        "summary" : "adds an inventory item",
-        "operationId" : "addInventory",
-        "description" : "Adds an item to the system",
-        "consumes" : [ "application/json" ],
+        "tags" : [ "users" ],
+        "summary" : "searches inventory",
+        "operationId" : "addFriend",
+        "description" : "By passing in the appropriate options, you can search for\navailable inventory in the system\n",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "in" : "body",
-          "name" : "inventoryItem",
-          "description" : "Inventory item to add",
-          "schema" : {
-            "$ref" : "#/definitions/InventoryItem"
-          }
+          "in" : "query",
+          "name" : "searchString",
+          "description" : "pass an optional search string for looking up inventory",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "in" : "query",
+          "name" : "skip",
+          "description" : "number of records to skip for pagination",
+          "type" : "integer",
+          "format" : "int32",
+          "minimum" : 0
+        }, {
+          "in" : "query",
+          "name" : "limit",
+          "description" : "maximum number of records to return",
+          "type" : "integer",
+          "format" : "int32",
+          "minimum" : 0,
+          "maximum" : 50
         } ],
         "responses" : {
-          "201" : {
-            "description" : "item created",
+          "200" : {
+            "description" : "search results matching criteria",
             "schema" : {
               "type" : "array",
               "items" : {
@@ -90,16 +105,7 @@
             }
           },
           "400" : {
-            "description" : "invalid input, object invalid",
-            "schema" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/definitions/InventoryItem"
-              }
-            }
-          },
-          "409" : {
-            "description" : "an existing item already exists"
+            "description" : "bad input parameter"
           }
         }
       }
