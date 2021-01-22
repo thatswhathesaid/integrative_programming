@@ -51,7 +51,7 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "search results matching criteria",
+            "description" : "message success",
             "schema" : {
               "type" : "array",
               "items" : {
