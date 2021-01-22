@@ -108,29 +108,19 @@
   "definitions" : {
     "InventoryItem" : {
       "type" : "object",
-      "required" : [ "id", "name", "manufacturer", "releaseDate" ],
+      "required" : [ "name", "username", "email" ],
       "properties" : {
-        "id" : {
-          "type" : "string",
-          "format" : "uuid",
-          "example" : "2019-00496-TG-0"
-        },
         "name" : {
           "type" : "string",
           "example" : "Muhammad Said"
         },
-        "manufacturer" : {
-          "$ref" : "#/definitions/Manufacturer"
-        }
-      }
-    },
-    "Manufacturer" : {
-      "required" : [ "name" ],
-      "properties" : {
-        "homePage" : {
+        "username" : {
           "type" : "string",
-          "format" : "url",
-          "example" : "https://github.com/thatswhathesaid/integrative_programming/blob/assign_two/assignment2.php"
+          "example" : "thatswhathesaid"
+        },
+        "email" : {
+          "type" : "string",
+          "example" : "realchimin23@gmail.com"
         }
       }
     }
