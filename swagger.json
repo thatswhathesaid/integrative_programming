@@ -47,7 +47,13 @@
             }
           },
           "400" : {
-            "description" : "bad input parameter"
+            "description" : "bad input parameter",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Model"
+              }
+            }
           }
         }
       }
@@ -79,7 +85,13 @@
             }
           },
           "400" : {
-            "description" : "bad input parameter"
+            "description" : "bad input parameter",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Model"
+              }
+            }
           }
         }
       }
@@ -125,11 +137,18 @@
       }
     },
     "Model" : {
-      "type" : "object",
       "properties" : {
-        "id" : {
-          "type" : "integer",
-          "format" : "int64"
+        "status-code" : {
+          "type" : "string",
+          "example" : 400
+        },
+        "message-id" : {
+          "type" : "string",
+          "example" : "Invalid Input Parameter"
+        },
+        "message" : {
+          "type" : "string",
+          "example" : "Invalid Input Parameter"
         }
       }
     }
