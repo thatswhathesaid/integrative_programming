@@ -29,33 +29,20 @@
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "in" : "query",
-          "name" : "searchString",
-          "description" : "pass an optional search string for looking up inventory",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "in" : "query",
-          "name" : "skip",
-          "description" : "number of records to skip for pagination",
-          "type" : "integer",
-          "format" : "int32",
-          "minimum" : 0
-        }, {
-          "in" : "query",
-          "name" : "limit",
-          "description" : "maximum number of records to return",
-          "type" : "integer",
-          "format" : "int32",
+          "name" : "postStatus",
+          "description" : "this will show that the user post something",
+          "type" : "string",
+          "format" : "string",
           "minimum" : 0,
           "maximum" : 50
         } ],
         "responses" : {
           "200" : {
-            "description" : "search results matching criteria",
+            "description" : "SUCCESS",
             "schema" : {
               "type" : "array",
               "items" : {
-                "$ref" : "#/definitions/InventoryItem"
+                "$ref" : "#/definitions/SocialMediaItem"
               }
             }
           },
@@ -74,33 +61,20 @@
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "in" : "query",
-          "name" : "searchString",
-          "description" : "pass an optional search string for looking up inventory",
-          "required" : false,
-          "type" : "string"
-        }, {
-          "in" : "query",
-          "name" : "skip",
-          "description" : "number of records to skip for pagination",
-          "type" : "integer",
-          "format" : "int32",
-          "minimum" : 0
-        }, {
-          "in" : "query",
-          "name" : "limit",
-          "description" : "maximum number of records to return",
-          "type" : "integer",
-          "format" : "int32",
+          "name" : "addFriend",
+          "description" : "this will show that the user added a friend",
+          "type" : "string",
+          "format" : "string",
           "minimum" : 0,
           "maximum" : 50
         } ],
         "responses" : {
           "200" : {
-            "description" : "search results matching criteria",
+            "description" : "SUCCESS",
             "schema" : {
               "type" : "array",
               "items" : {
-                "$ref" : "#/definitions/InventoryItem"
+                "$ref" : "#/definitions/SocialMediaItem"
               }
             }
           },
@@ -112,7 +86,7 @@
     }
   },
   "definitions" : {
-    "InventoryItem" : {
+    "SocialMediaItem" : {
       "type" : "object",
       "required" : [ "name", "username", "email" ],
       "properties" : {
