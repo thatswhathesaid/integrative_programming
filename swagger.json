@@ -1,11 +1,11 @@
 {
   "swagger" : "2.0",
   "info" : {
-    "description" : "This is a simple API",
+    "description" : "This is a simple API of our previous assignment",
     "version" : "1.0.0",
-    "title" : "Simple Inventory API",
+    "title" : "Assignment Three",
     "contact" : {
-      "email" : "you@your-company.com"
+      "email" : "realchimin23@gmail.com"
     },
     "license" : {
       "name" : "Apache 2.0",
@@ -23,9 +23,9 @@
     "/status" : {
       "post" : {
         "tags" : [ "users" ],
-        "summary" : "the user post a status",
+        "summary" : "The user post a status",
         "operationId" : "postStatus",
-        "description" : "this will show that the user post a status",
+        "description" : "This will show that the user post a status",
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "in" : "query",
@@ -55,9 +55,9 @@
     "/friend" : {
       "post" : {
         "tags" : [ "users" ],
-        "summary" : "the user added a friend",
+        "summary" : "The user added a friend",
         "operationId" : "addFriend",
-        "description" : "this will show that the user added a friend",
+        "description" : "This will show that the user added a friend",
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "in" : "query",
