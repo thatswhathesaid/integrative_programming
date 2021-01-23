@@ -90,17 +90,46 @@
       "type" : "object",
       "required" : [ "name", "username", "email" ],
       "properties" : {
-        "name" : {
+        "status-code" : {
           "type" : "string",
-          "example" : "Muhammad Said"
+          "example" : 200
         },
-        "username" : {
+        "message-id" : {
           "type" : "string",
-          "example" : "thatswhathesaid"
+          "example" : "SUCCESS"
         },
-        "email" : {
+        "message" : {
           "type" : "string",
-          "example" : "realchimin23@gmail.com"
+          "example" : "SUCCESS"
+        },
+        "data" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "name" : {
+                "type" : "string",
+                "example" : "Muhammad Said"
+              },
+              "username" : {
+                "type" : "string",
+                "example" : "thatswhathesaid"
+              },
+              "email" : {
+                "type" : "string",
+                "example" : "realchimin23@gmail.com"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Model" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int64"
         }
       }
     }
