@@ -23,14 +23,14 @@
     "/status" : {
       "post" : {
         "tags" : [ "users" ],
-        "summary" : "searches inventory",
+        "summary" : "the user post a status",
         "operationId" : "postStatus",
-        "description" : "By passing in the appropriate options, you can search for\navailable inventory in the system\n",
+        "description" : "this will show that the user post a status",
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "in" : "query",
           "name" : "postStatus",
-          "description" : "this will show that the user post something",
+          "description" : "this will show that the user post a status",
           "type" : "string",
           "format" : "string",
           "minimum" : 0,
@@ -55,9 +55,9 @@
     "/friend" : {
       "post" : {
         "tags" : [ "users" ],
-        "summary" : "searches inventory",
+        "summary" : "the user added a friend",
         "operationId" : "addFriend",
-        "description" : "By passing in the appropriate options, you can search for\navailable inventory in the system\n",
+        "description" : "this will show that the user added a friend",
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "in" : "query",
